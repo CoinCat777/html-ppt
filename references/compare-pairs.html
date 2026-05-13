@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern: compare-pairs</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+body { background: #f5ede0; display: flex; justify-content: center; padding: 50px 20px 80px; }
+
+.page { max-width: 900px; width: 100%; }
+.pattern-tag { display: inline-block; font-family: monospace; font-size: 0.78rem; background: #cc5833; color: white; padding: 0.2em 0.7em; border-radius: 5px; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.pattern-title { font-size: 22px; font-weight: 600; color: #1a1918; margin-bottom: 4px; }
+.pattern-alias { font-size: 13px; color: #9e9590; margin-bottom: 6px; }
+.pattern-desc  { font-size: 13px; color: #6b6460; line-height: 1.6; margin-bottom: 40px; }
+.warn { display: inline-block; margin-top: 6px; font-size: 12px; background: #fdf5e8; color: #7a4d1a; border: 1px solid #d4ae7a; padding: 0.25em 0.7em; border-radius: 5px; }
+
+/* ── Demo ── */
+.demo { background: #faf7f4; border: 1px solid #e0d8d0; border-radius: 14px; padding: 40px 80px; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc5833; font-weight: 500; margin-bottom: 6px; }
+.accent-bar { width: 36px; height: 3px; background: #cc5833; border-radius: 2px; margin: 8px 0 16px; }
+.slide-title { font-size: 28px; font-weight: 600; color: #1a1918; letter-spacing: -0.02em; margin-bottom: 14px; }
+
+/* ── Compare rows ── */
+.compare-list { display: flex; flex-direction: column; gap: 8px; }
+.compare-row  { display: flex; align-items: center; gap: 14px; position: relative; }
+.compare-row::after {
+  content: '→'; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  color: #cc5833; font-size: 16px; font-weight: 700; pointer-events: none;
+}
+.card {
+  flex: 1; border-radius: 10px; padding: 10px 16px;
+  text-align: center; display: flex; flex-direction: column;
+  justify-content: center; min-height: 60px;
+}
+.card-title { font-size: 14px; font-weight: 600; margin-bottom: 3px; line-height: 1.35; }
+.card-desc  { font-size: 12px; line-height: 1.4; }
+
+.problem { background: #feeceb; }
+.problem .card-title { color: #732222; }
+.problem .card-desc  { color: #b3524f; }
+
+.solution { background: #e6f6ef; }
+.solution .card-title { color: #0e5b41; }
+.solution .card-desc  { color: #418a6a; }
+
+.summary {
+  background: #cc5833; color: white;
+  border-radius: 10px; padding: 12px 20px;
+  text-align: center; margin-top: 8px;
+}
+.summary .card-title { color: white; font-size: 14px; }
+.summary .card-desc  { color: rgba(255,255,255,0.85); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="pattern-tag">compare-pairs</div>
+  <div class="pattern-title">左右對照卡片組</div>
+  <div class="pattern-alias">別名：心理障礙卡 / problem-solution / 左右對應 / before-after / NG→解法</div>
+  <p class="pattern-desc">
+    3–5 組水平對照列：左欄（粉紅底，問題/障礙）→ 中間箭頭（::after 偽元素）→ 右欄（綠底，解法/對比）。底部接全寬 accent 色洞察橫幅。<br>
+    <strong>關鍵：</strong>箭頭用 position:absolute 的 ::after，不作為 flex item，才能保持兩欄 flex:1 等寬。
+    <span class="warn">⚠ 5 組 + summary 高度約 520px，720p 螢幕略緊；建議 4 組以內</span>
+  </p>
+
+  <div class="demo">
+    <div class="eyebrow">心態建立</div>
+    <div class="accent-bar"></div>
+    <div class="slide-title">初學者最常見的心理障礙 × 破解方法</div>
+
+    <div class="compare-list">
+      <div class="compare-row">
+        <div class="card problem"><div class="card-title">「我怕問出蠢問題」</div><div class="card-desc">害怕、自我審查</div></div>
+        <div class="card solution"><div class="card-title">AI 沒有情緒，問再多次也不會不耐煩</div><div class="card-desc">它是你最有耐心的學習夥伴</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="card problem"><div class="card-title">「看不懂 AI 寫的程式」</div><div class="card-desc">挫折感、放棄</div></div>
+        <div class="card solution"><div class="card-title">直接問 AI：「解釋這段程式碼給我聽」</div><div class="card-desc">看不懂就問，這本來就是流程的一部分</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="card problem"><div class="card-title">「AI 給的答案不能用」</div><div class="card-desc">一次不成功就放棄</div></div>
+        <div class="card solution"><div class="card-title">迭代是正常的，不是你的問題</div><div class="card-desc">專業工程師也要來回 3–5 次才到位</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="card problem"><div class="card-title">「我要先學完再開始做」</div><div class="card-desc">完美主義、無限準備</div></div>
+        <div class="card solution"><div class="card-title">做中學才是 AI Coding 的核心精神</div><div class="card-desc">30 分鐘做出第一個成品，比讀 30 天有效</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="card problem"><div class="card-title">「這樣靠 AI 算作弊嗎？」</div><div class="card-desc">道德疑慮、猶豫</div></div>
+        <div class="card solution"><div class="card-title">用計算機不是作弊，AI 是新一代工具</div><div class="card-desc">問題是：你有沒有真正解決問題？</div></div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div class="card-title">你不需要先學會程式，才能開始用 AI 做東西</div>
+      <div class="card-desc">但你要學會把問題想清楚——那才是 AI 時代最值錢的能力</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "skill_name": "html-ppt",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "幫我把以下公司介紹轉成商務風格的互動網頁報告：\n\n【公司簡介】\n我們是一家成立於 2018 年的 B2B SaaS 公司，專注於企業內部溝通管理。目前服務超過 3,000 家中小企業，月活躍用戶 12 萬人，2024 年 ARR 成長 85%，達到 4,200 萬台幣。核心產品包括：智能工作流審批、跨部門任務追蹤、即時報表儀表板。我們的客戶平均縮短 40% 行政流程時間。\n\n目標受眾：潛在投資人與企業客戶。",
+      "expected_output": "Phase 1 輸出：完整的 storyboard.md 分鏡規劃（5–8 頁），包含封面、核心指標、產品介紹、客戶成效、結尾 CTA。文案已去 AI 感，含數字亮點。最後明確暫停並提示使用者確認，不輸出任何 HTML。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我要做一個科技風格的產品發表網頁，介紹我們的 AI 資安偵測平台「ShieldAI」。\n\n產品亮點：\n- 即時偵測 0-day 漏洞，反應時間 < 3 秒\n- 支援 AWS / Azure / GCP 三大雲平台\n- AI 模型準確率 99.2%，誤報率 < 0.3%\n- 目前客戶包含 5 家台灣前 20 大銀行\n\n需要有圖表展示偵測效能數據，整體要有科技感。",
+      "expected_output": "Phase 1 輸出：storyboard.md 含 6–9 頁，包括英雄頁（大字衝擊感）、數據儀表板頁（ECharts 圖表規劃）、功能說明頁、客戶信任頁。科技主題的轉場動畫規劃。文案無 AI 廢話，有主觀洞察。最後暫停等待確認。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "確認，開始 coding。請依照剛才的分鏡，使用極簡風格製作 index.html。",
+      "expected_output": "Phase 2 輸出：完整可運行的單一 index.html 檔，包含：(1) Reveal.js CDN + 初始化；(2) 底部進度條 HTML + JS；(3) 左側 TOC Drawer + mouseenter 觸發邏輯；(4) 鍵盤 ← → 導覽（Reveal.js 內建）；(5) minimal 主題 CSS 完整 inline；(6) 各 section 的 HTML 對應分鏡內容。",
+      "files": []
+    }
+  ]
+}

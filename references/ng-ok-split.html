@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern: ng-ok-split</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+body { background: #f5ede0; display: flex; justify-content: center; padding: 50px 20px 80px; }
+
+.page { max-width: 900px; width: 100%; }
+.pattern-tag { display: inline-block; font-family: monospace; font-size: 0.78rem; background: #cc5833; color: white; padding: 0.2em 0.7em; border-radius: 5px; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.pattern-title { font-size: 22px; font-weight: 600; color: #1a1918; margin-bottom: 4px; }
+.pattern-alias { font-size: 13px; color: #9e9590; margin-bottom: 6px; }
+.pattern-desc  { font-size: 13px; color: #6b6460; line-height: 1.6; margin-bottom: 40px; }
+
+/* ── Demo ── */
+.demo { background: #faf7f4; border: 1px solid #e0d8d0; border-radius: 14px; padding: 40px 80px; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc5833; font-weight: 500; margin-bottom: 6px; }
+.accent-bar { width: 36px; height: 3px; background: #cc5833; border-radius: 2px; margin: 8px 0 16px; }
+.slide-title { font-size: 28px; font-weight: 600; color: #1a1918; letter-spacing: -0.02em; margin-bottom: 6px; }
+.slide-sub { font-size: 14px; color: #6b6460; margin-bottom: 20px; }
+
+/* ── Two panels ── */
+.split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+
+.panel { border-radius: 14px; padding: 22px; }
+.panel.ng { border: 2px dashed #e5a598; background: #fdf5f3; }
+.panel.ok { border: 2px solid #cc5833; background: #f5e8e2; }
+
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.09em; margin-bottom: 14px;
+}
+.tag.ng { color: #b54d3a; }
+.tag.ok { color: #cc5833; }
+
+.prompt-box {
+  font-family: monospace; font-size: 13px; line-height: 1.6;
+  color: #1a1918; background: rgba(255,255,255,0.6);
+  border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;
+}
+.panel-desc { font-size: 13px; line-height: 1.55; }
+.panel-desc.ng { color: #b54d3a; }
+.panel-desc.ok { color: #6b6460; }
+
+.panel-list { display: flex; flex-direction: column; gap: 6px; }
+.panel-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #6b6460; line-height: 1.4; }
+.panel-dot { width: 5px; height: 5px; border-radius: 50%; background: #cc5833; flex-shrink: 0; margin-top: 5px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="pattern-tag">ng-ok-split</div>
+  <div class="pattern-title">反例 vs 正例 雙面板</div>
+  <div class="pattern-alias">別名：NG vs OK / 反例正例 / 雙面板對比 / 錯誤 vs 正確 / 不夠清楚 vs 這樣說才對</div>
+  <p class="pattern-desc">
+    CSS Grid 雙欄。左欄（虛線框 + 淡紅底）= 反例 / 錯誤做法；右欄（實線框 + accent 淡底）= 正確做法。各有標籤徽章、等寬 prompt 框、說明文字或條列。<br>
+    <strong>關鍵：</strong>左欄用 border:2px dashed（無填色），右欄用 border:2px solid + accent-subtle 底色，視覺差異清楚。Prompt 框背景用 rgba(255,255,255,0.6) 讓底色透出。
+  </p>
+
+  <div class="demo">
+    <div class="eyebrow">關鍵技巧</div>
+    <div class="accent-bar"></div>
+    <div class="slide-title">需求越細，工具越準</div>
+    <div class="slide-sub">給 Gemini 的 Prompt 品質，決定工具的品質</div>
+
+    <div class="split-layout">
+      <div class="panel ng">
+        <div class="tag ng">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          不夠清楚
+        </div>
+        <div class="prompt-box">「幫我做一個數據分析工具」</div>
+        <div class="panel-desc ng">AI 不知道資料格式、要做什麼計算、輸出什麼圖——結果幾乎一定要重來</div>
+      </div>
+      <div class="panel ok">
+        <div class="tag ok">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          這樣說才對
+        </div>
+        <div class="prompt-box">「輸入欄位 FAB / PRODUCT / LOT，CSV 格式，輸出長條圖，X 軸 LOT，Y 軸 CP 值，顏色按 PRODUCT 分類」</div>
+        <div class="panel-list">
+          <div class="panel-item"><div class="panel-dot"></div>說清楚工具要做什麼事</div>
+          <div class="panel-item"><div class="panel-dot"></div>提供資料格式與欄位名稱</div>
+          <div class="panel-item"><div class="panel-dot"></div>指定輸出型態（圖表類型、軸設定）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

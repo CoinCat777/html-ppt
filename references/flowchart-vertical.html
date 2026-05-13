@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern: flowchart-vertical</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+body { background: #f5ede0; display: flex; justify-content: center; padding: 50px 20px 80px; }
+
+.page { max-width: 900px; width: 100%; }
+.pattern-tag { display: inline-block; font-family: monospace; font-size: 0.78rem; background: #cc5833; color: white; padding: 0.2em 0.7em; border-radius: 5px; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.pattern-title { font-size: 22px; font-weight: 600; color: #1a1918; margin-bottom: 4px; }
+.pattern-alias { font-size: 13px; color: #9e9590; margin-bottom: 6px; }
+.pattern-desc  { font-size: 13px; color: #6b6460; line-height: 1.6; margin-bottom: 40px; }
+
+/* ── Demo area (simulates slide padding) ── */
+.demo { background: #faf7f4; border: 1px solid #e0d8d0; border-radius: 14px; padding: 40px 80px; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc5833; font-weight: 500; margin-bottom: 6px; }
+.accent-bar { width: 36px; height: 3px; background: #cc5833; border-radius: 2px; margin: 8px 0 16px; }
+.slide-title { font-size: 28px; font-weight: 600; color: #1a1918; letter-spacing: -0.02em; margin-bottom: 14px; }
+
+/* ── Flow ── */
+.flow-wrapper { position: relative; display: flex; flex-direction: column; align-items: center; width: fit-content; margin-left: 120px; }
+
+.return-loop {
+  position: absolute; top: 30px; bottom: 30px;
+  left: -120px; width: 105px;
+  border-left: 2px dashed #c4c4c4;
+  border-top: 2px dashed #c4c4c4;
+  border-bottom: 2px dashed #c4c4c4;
+}
+.return-loop::after {
+  content: ''; position: absolute; top: -6px; right: -1px;
+  border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+  border-left: 8px solid #c4c4c4;
+}
+.loop-text {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  text-align: center; font-size: 11px; color: #9e9590; line-height: 1.6;
+  width: 80px;
+}
+
+.step-row { position: relative; width: 260px; display: flex; justify-content: center; }
+
+.arrow-down { width: 2px; height: 22px; background: #aaa; position: relative; margin: 2px 0; }
+.arrow-down::after {
+  content: ''; position: absolute; bottom: -2px; left: -4px;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 7px solid #aaa;
+}
+
+.main-card { width: 100%; padding: 12px 18px; border-radius: 12px; text-align: center; position: relative; z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.step-title { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+.step-desc  { font-size: 13px; }
+
+.side-card {
+  position: absolute; left: calc(100% + 36px); top: 50%; transform: translateY(-50%);
+  background: #ede8e3; border: 1px solid #e0d8d0;
+  padding: 10px 14px; border-radius: 10px; width: 240px;
+  text-align: center; color: #6b6460; font-size: 13px; line-height: 1.5; z-index: 2;
+}
+.side-card::before {
+  content: ''; position: absolute; top: 50%; left: -36px;
+  width: 36px; border-top: 2px dashed #e0d8d0;
+}
+.side-card strong { display: block; color: #1a1918; font-weight: 600; margin-bottom: 2px; }
+
+.card-purple { background: #f3effc; border: 1px solid #b7a6d8; color: #4b398e; }
+.card-blue   { background: #eef6fc; border: 1px solid #99badb; color: #174b7e; }
+.card-green  { background: #e6f5ec; border: 1px solid #8bc1a3; color: #135233; }
+.card-orange { background: #fdf5e8; border: 1px solid #d4ae7a; color: #6a4315; display:flex; align-items:center; justify-content:center; min-height:48px; }
+.card-orange .step-title { margin-bottom: 0; }
+
+.insight { margin-top: 16px; padding: 10px 14px; border-left: 3px solid #cc5833; background: #f5e8e2; border-radius: 0 8px 8px 0; font-size: 13px; color: #6b6460; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="pattern-tag">flowchart-vertical</div>
+  <div class="pattern-title">垂直步驟循環圖</div>
+  <div class="pattern-alias">別名：垂直循環圖 / loop diagram / 4 節點循環 / PDCA</div>
+  <p class="pattern-desc">
+    3–6 個步驟垂直排列。左側：三邊虛線框形成回饋循環（無右邊），帶文字標籤。中央：彩色步驟卡片 + 向下箭頭。右側：絕對定位的標注卡片，以水平虛線連接主卡片。<br>
+    <strong>關鍵：</strong>side-card 用 position:absolute（相對 step-row），不可改為 flex item。
+  </p>
+
+  <div class="demo">
+    <div class="eyebrow">核心方法</div>
+    <div class="accent-bar"></div>
+    <div class="slide-title">AI Coding 核心循環</div>
+
+    <div class="flow-wrapper">
+      <div class="return-loop">
+        <div class="loop-text">不對就<br>修正重來</div>
+      </div>
+      <div class="step-row">
+        <div class="main-card card-purple">
+          <div class="step-title">① 想清楚目標</div>
+          <div class="step-desc">你要解決什麼問題？</div>
+        </div>
+        <div class="side-card">
+          <strong>「這是最關鍵的一步」</strong>
+          問題想不清楚，後面都白搭
+        </div>
+      </div>
+      <div class="arrow-down"></div>
+      <div class="step-row">
+        <div class="main-card card-blue">
+          <div class="step-title">② 下 Prompt</div>
+          <div class="step-desc">用白話描述給 AI</div>
+        </div>
+        <div class="side-card">
+          <strong>「Prompt 是新時代的技能」</strong>
+          說得越清楚，AI 越厲害
+        </div>
+      </div>
+      <div class="arrow-down"></div>
+      <div class="step-row">
+        <div class="main-card card-green">
+          <div class="step-title">③ AI 產出程式碼</div>
+          <div class="step-desc">幾秒內生成結果</div>
+        </div>
+      </div>
+      <div class="arrow-down"></div>
+      <div class="step-row">
+        <div class="main-card card-orange">
+          <div class="step-title">④ 測試 + 驗證</div>
+        </div>
+        <div class="side-card">
+          跑起來才算數，跑不起來繼續問
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">每一次「跑不起來」都是需求沒說清楚的訊號，不是你的錯</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern: flowchart-horizontal</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+body { background: #f5ede0; display: flex; justify-content: center; padding: 50px 20px 80px; }
+
+.page { max-width: 900px; width: 100%; }
+.pattern-tag { display: inline-block; font-family: monospace; font-size: 0.78rem; background: #cc5833; color: white; padding: 0.2em 0.7em; border-radius: 5px; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.pattern-title { font-size: 22px; font-weight: 600; color: #1a1918; margin-bottom: 4px; }
+.pattern-alias { font-size: 13px; color: #9e9590; margin-bottom: 6px; }
+.pattern-desc  { font-size: 13px; color: #6b6460; line-height: 1.6; margin-bottom: 40px; }
+
+/* ── Demo ── */
+.demo { background: #faf7f4; border: 1px solid #e0d8d0; border-radius: 14px; padding: 40px 80px; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc5833; font-weight: 500; margin-bottom: 6px; }
+.accent-bar { width: 36px; height: 3px; background: #cc5833; border-radius: 2px; margin: 8px 0 16px; }
+.slide-title { font-size: 28px; font-weight: 600; color: #1a1918; letter-spacing: -0.02em; margin-bottom: 32px; }
+
+/* ── Horizontal flow ── */
+.flow { display: flex; align-items: flex-start; }
+.node {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; text-align: center; position: relative;
+}
+/* Connecting line between nodes */
+.node:not(:last-child)::after {
+  content: ''; position: absolute; top: 19px;
+  left: calc(50% + 22px); right: calc(-50% + 22px);
+  height: 2px; background: #e0d8d0;
+}
+.circle {
+  width: 40px; height: 40px;
+  border: 2.5px solid #cc5833; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 600;
+  background: #f5ede0; color: #cc5833;
+  position: relative; z-index: 1;
+  transition: background 0.2s, color 0.2s;
+}
+.node:hover .circle { background: #cc5833; color: white; }
+.node-title { margin-top: 12px; font-size: 14px; font-weight: 600; color: #1a1918; }
+.node-desc  { margin-top: 5px; font-size: 12px; color: #6b6460; line-height: 1.5; padding: 0 6px; }
+
+.insight { margin-top: 32px; padding: 10px 14px; border-left: 3px solid #cc5833; background: #f5e8e2; border-radius: 0 8px 8px 0; font-size: 13px; color: #6b6460; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="pattern-tag">flowchart-horizontal</div>
+  <div class="pattern-title">水平步驟流程圖</div>
+  <div class="pattern-alias">別名：水平流程 / 步驟流程圖 / 4-step flow / 操作步驟</div>
+  <p class="pattern-desc">
+    3–6 個線性步驟水平排列。每個節點：編號圓圈（accent 色邊框）＋ 下方標題與說明。節點間以水平線（::after 偽元素）連接，線在圓圈中間高度。<br>
+    <strong>關鍵：</strong>連接線用 .node:not(:last-child)::after，top 對齊圓圈中心（circle height/2 = 20px）。Hover 效果使圓圈填色。
+  </p>
+
+  <div class="demo">
+    <div class="eyebrow">操作流程</div>
+    <div class="accent-bar"></div>
+    <div class="slide-title">從需求到工具，四個動作</div>
+
+    <div class="flow">
+      <div class="node">
+        <div class="circle">1</div>
+        <div class="node-title">描述需求</div>
+        <div class="node-desc">告訴 Gemini 你要做什麼、資料長什麼樣</div>
+      </div>
+      <div class="node">
+        <div class="circle">2</div>
+        <div class="node-title">取得 Code</div>
+        <div class="node-desc">Gemini 產出完整 HTML 程式碼</div>
+      </div>
+      <div class="node">
+        <div class="circle">3</div>
+        <div class="node-title">存成 .html</div>
+        <div class="node-desc">記事本貼上，UTF-8 存檔</div>
+      </div>
+      <div class="node">
+        <div class="circle">4</div>
+        <div class="node-title">驗收調整</div>
+        <div class="node-desc">瀏覽器開啟，不符合再回頭修</div>
+      </div>
+    </div>
+
+    <div class="insight">失敗不是 bug，是需求沒說清楚的回饋</div>
+  </div>
+
+</div>
+</body>
+</html>

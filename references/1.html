@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>html-ppt — 版面模式索引</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+body { background: #ddd8d3; display: flex; justify-content: center; padding: 50px 20px 80px; -webkit-font-smoothing: antialiased; }
+.page { max-width: 760px; width: 100%; }
+
+h1 { font-size: 24px; font-weight: 600; color: #1a1918; margin-bottom: 6px; }
+.sub { font-size: 13px; color: #6b6460; line-height: 1.6; margin-bottom: 36px; }
+.sub code { background: #ccc8c4; padding: 0.1em 0.4em; border-radius: 4px; font-family: monospace; font-size: 0.85em; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.card {
+  background: #faf7f4; border: 1px solid #e0d8d0;
+  border-radius: 12px; padding: 20px 24px;
+  text-decoration: none; color: inherit;
+  transition: box-shadow 0.15s, transform 0.15s;
+  display: block;
+}
+.card:hover {
+  box-shadow: 0 4px 16px rgba(60,40,20,0.1);
+  transform: translateY(-2px);
+}
+.card-name {
+  font-family: monospace; font-size: 14px; font-weight: 600;
+  color: #cc5833; margin-bottom: 5px;
+}
+.card-title { font-size: 15px; font-weight: 600; color: #1a1918; margin-bottom: 4px; }
+.card-alias { font-size: 11px; color: #9e9590; line-height: 1.5; margin-bottom: 8px; }
+.card-note {
+  display: inline-block; font-size: 11px; font-weight: 500;
+  padding: 0.2em 0.6em; border-radius: 4px;
+}
+.ok   { background: #e6f6ef; color: #0e5b41; }
+.warn { background: #fdf5e8; color: #7a4d1a; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>html-ppt — 版面模式索引</h1>
+  <p class="sub">
+    分鏡 <code>圖解模式</code> 欄位的具名 pattern 對照，點擊查看視覺 demo。<br>
+    含連接線或左右對照組的頁面，必須在分鏡指定 pattern 名稱。
+  </p>
+
+  <div class="grid">
+    <a class="card" href="flowchart-vertical.html">
+      <div class="card-name">flowchart-vertical</div>
+      <div class="card-title">垂直步驟循環圖</div>
+      <div class="card-alias">垂直循環圖 / loop diagram / PDCA</div>
+      <span class="card-note ok">✓ 4 節點，高度充裕</span>
+    </a>
+    <a class="card" href="compare-pairs.html">
+      <div class="card-name">compare-pairs</div>
+      <div class="card-title">左右對照卡片組</div>
+      <div class="card-alias">problem-solution / 心理障礙卡 / before-after</div>
+      <span class="card-note warn">⚠ 5 組略緊，建議 4 組以內</span>
+    </a>
+    <a class="card" href="flowchart-horizontal.html">
+      <div class="card-name">flowchart-horizontal</div>
+      <div class="card-title">水平步驟流程圖</div>
+      <div class="card-alias">水平流程 / 4-step flow / 操作步驟</div>
+      <span class="card-note ok">✓ 單行，高度非常充裕</span>
+    </a>
+    <a class="card" href="ng-ok-split.html">
+      <div class="card-name">ng-ok-split</div>
+      <div class="card-title">反例 vs 正例 雙面板</div>
+      <div class="card-alias">NG vs OK / 雙面板對比 / 錯誤 vs 正確</div>
+      <span class="card-note ok">✓ 高度充裕</span>
+    </a>
+    <a class="card" href="timeline-dual.html">
+      <div class="card-name">timeline-dual</div>
+      <div class="card-title">雙欄垂直時間線</div>
+      <div class="card-alias">學習路線 / two-path / 並行路徑</div>
+      <span class="card-note ok">✓ 3 步驟版，高度充裕</span>
+    </a>
+    <a class="card" href="vs-duel.html">
+      <div class="card-name">vs-duel</div>
+      <div class="card-title">雙卡對決（VS 徽章版）</div>
+      <div class="card-alias">傳統 vs 新方法 / A vs B 選擇 / 戲劇性對決</div>
+      <span class="card-note ok">✓ 4 條列版，高度充裕</span>
+    </a>
+    <a class="card" href="stat-grid.html">
+      <div class="card-name">stat-grid</div>
+      <div class="card-title">數字儀表板卡片格</div>
+      <div class="card-alias">numbers dashboard / KPI cards / 數據亮點</div>
+      <span class="card-note ok">✓ 2×3 格，高度非常充裕</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>

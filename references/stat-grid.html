@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern: stat-grid</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+body { background: #f5ede0; display: flex; justify-content: center; padding: 50px 20px 80px; }
+
+.page { max-width: 900px; width: 100%; }
+.pattern-tag { display: inline-block; font-family: monospace; font-size: 0.78rem; background: #cc5833; color: white; padding: 0.2em 0.7em; border-radius: 5px; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.pattern-title { font-size: 22px; font-weight: 600; color: #1a1918; margin-bottom: 4px; }
+.pattern-alias { font-size: 13px; color: #9e9590; margin-bottom: 6px; }
+.pattern-desc  { font-size: 13px; color: #6b6460; line-height: 1.6; margin-bottom: 40px; }
+
+/* ── Demo ── */
+.demo { background: #faf7f4; border: 1px solid #e0d8d0; border-radius: 14px; padding: 40px 80px; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc5833; font-weight: 500; margin-bottom: 6px; }
+.accent-bar { width: 36px; height: 3px; background: #cc5833; border-radius: 2px; margin: 8px 0 16px; }
+.slide-title { font-size: 28px; font-weight: 600; color: #1a1918; letter-spacing: -0.02em; margin-bottom: 20px; }
+
+/* ── Stat grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 14px;
+}
+.card {
+  border: 1px solid #e0d8d0; border-radius: 14px;
+  padding: 22px 20px; background: #ffffff;
+  box-shadow: 0 2px 8px rgba(60,40,20,0.05);
+}
+.num {
+  font-size: 36px; font-weight: 700;
+  letter-spacing: -0.04em; line-height: 1;
+  color: #cc5833;
+}
+.unit {
+  font-size: 11px; color: #9e9590;
+  margin-top: 6px; text-transform: uppercase; letter-spacing: 0.07em;
+}
+
+.insight { margin-top: 20px; padding: 10px 14px; border-left: 3px solid #cc5833; background: #f5e8e2; border-radius: 0 8px 8px 0; font-size: 13px; color: #6b6460; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="pattern-tag">stat-grid</div>
+  <div class="pattern-title">數字儀表板卡片格</div>
+  <div class="pattern-alias">別名：數字儀表板 / numbers dashboard / KPI cards / 數據亮點</div>
+  <p class="pattern-desc">
+    CSS Grid 2×3（或 2×2）均分卡片。每張卡片：大數字（accent 色，serif 字型）+ 小標籤（uppercase，muted 色）。卡片背景白色、圓角、淡陰影，整體在暖色背景上清爽突出。<br>
+    <strong>關鍵：</strong>數字用大字號（36px+），字型用 serif（Lora / Georgia）強化視覺重量。標籤用 uppercase + letter-spacing 增加精緻感。
+  </p>
+
+  <div class="demo">
+    <div class="eyebrow">可信度</div>
+    <div class="accent-bar"></div>
+    <div class="slide-title">用數字衡量這套教程</div>
+
+    <div class="grid">
+      <div class="card"><div class="num">上千張</div><div class="unit">圖片示例</div></div>
+      <div class="card"><div class="num">幾十萬字</div><div class="unit">內容篇幅</div></div>
+      <div class="card"><div class="num">2.5 年</div><div class="unit">AI 編程實戰積累</div></div>
+      <div class="card"><div class="num">10 分鐘</div><div class="unit">做出第一個作品</div></div>
+      <div class="card"><div class="num">10+</div><div class="unit">自研產品經驗</div></div>
+      <div class="card"><div class="num">200 萬</div><div class="unit">粉絲驗證的方法論</div></div>
+    </div>
+
+    <div class="insight">每個數字背後都是真實場景的積累——不是課程廣告，是方法論驗證</div>
+  </div>
+
+</div>
+</body>
+</html>

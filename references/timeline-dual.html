@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern: timeline-dual</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; }
+body { background: #f5ede0; display: flex; justify-content: center; padding: 50px 20px 80px; }
+
+.page { max-width: 900px; width: 100%; }
+.pattern-tag { display: inline-block; font-family: monospace; font-size: 0.78rem; background: #cc5833; color: white; padding: 0.2em 0.7em; border-radius: 5px; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.pattern-title { font-size: 22px; font-weight: 600; color: #1a1918; margin-bottom: 4px; }
+.pattern-alias { font-size: 13px; color: #9e9590; margin-bottom: 6px; }
+.pattern-desc  { font-size: 13px; color: #6b6460; line-height: 1.6; margin-bottom: 40px; }
+
+/* ── Demo ── */
+.demo { background: #faf7f4; border: 1px solid #e0d8d0; border-radius: 14px; padding: 40px 80px; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc5833; font-weight: 500; margin-bottom: 6px; }
+.accent-bar { width: 36px; height: 3px; background: #cc5833; border-radius: 2px; margin: 8px 0 16px; }
+.slide-title { font-size: 28px; font-weight: 600; color: #1a1918; letter-spacing: -0.02em; margin-bottom: 20px; }
+
+/* ── Dual timeline ── */
+.dual-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+.col-title {
+  font-size: 15px; font-weight: 600;
+  padding-bottom: 10px; border-bottom: 2px solid #cc5833;
+  margin-bottom: 16px; color: #1a1918;
+}
+
+.steps { display: flex; flex-direction: column; }
+.step  { display: flex; gap: 14px; }
+.step-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.dot {
+  width: 10px; height: 10px;
+  border: 2px solid #cc5833; border-radius: 50%;
+  background: #faf7f4; margin-top: 3px; flex-shrink: 0;
+}
+.line { width: 2px; flex: 1; background: #e0d8d0; min-height: 28px; }
+
+.step-body { padding-bottom: 18px; }
+.step-lbl {
+  font-size: 10px; text-transform: uppercase;
+  letter-spacing: 0.1em; color: #9e9590;
+  margin-bottom: 2px; font-family: monospace;
+}
+.step-text { font-size: 14px; color: #6b6460; line-height: 1.55; }
+
+.insight { margin-top: 24px; padding: 10px 14px; border-left: 3px solid #cc5833; background: #f5e8e2; border-radius: 0 8px 8px 0; font-size: 13px; color: #6b6460; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="pattern-tag">timeline-dual</div>
+  <div class="pattern-title">雙欄垂直時間線</div>
+  <div class="pattern-alias">別名：雙欄時間線 / 學習路線 / two-path / 並行路徑 / 雙軌計劃</div>
+  <p class="pattern-desc">
+    CSS Grid 雙欄，各欄有標題（accent 底線），每條時間線由 dot（accent 色邊框圓點）+ line（灰色垂直線）+ step-body（標籤 + 說明）組成，最後一步無 line。底部可接全寬洞察橫幅。<br>
+    <strong>關鍵：</strong>dot 和 line 在 flex-direction:column 的 step-left 容器內，line 用 flex:1 自動填充步驟間距。最後一步不放 .line 元素。
+  </p>
+
+  <div class="demo">
+    <div class="eyebrow">學習路線</div>
+    <div class="accent-bar"></div>
+    <div class="slide-title">從哪裡開始？</div>
+
+    <div class="dual-layout">
+      <div>
+        <div class="col-title">零基礎新手</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-left"><div class="dot"></div><div class="line"></div></div>
+            <div class="step-body"><div class="step-lbl">Day 1</div><div class="step-text">基礎概念快速理解</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="dot"></div><div class="line"></div></div>
+            <div class="step-body"><div class="step-lbl">Week 1–2</div><div class="step-text">工具選擇 + 做出第一個項目</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="dot"></div></div>
+            <div class="step-body"><div class="step-lbl">之後</div><div class="step-text">技巧深化 + 產品變現</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="col-title">有編程基礎</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-left"><div class="dot"></div><div class="line"></div></div>
+            <div class="step-body"><div class="step-lbl">Day 1</div><div class="step-text">快速過完基礎章節</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="dot"></div><div class="line"></div></div>
+            <div class="step-body"><div class="step-lbl">Week 1</div><div class="step-text">工具重構現有項目</div></div>
+          </div>
+          <div class="step">
+            <div class="step-left"><div class="dot"></div></div>
+            <div class="step-body"><div class="step-lbl">之後</div><div class="step-text">對話工程進階</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">多數人的瓶頸不是技術，是不知道從哪裡開始——選好路線，30 天內可有成品</div>
+  </div>
+
+</div>
+</body>
+</html>
