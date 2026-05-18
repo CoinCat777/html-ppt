@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "ng-ok-split",
+  "title": "反例 vs 正例 雙面板",
+  "htmlDemo": "../ng-ok-split.html",
+  "summary": "雙欄對照，一側展示反例或錯誤寫法，另一側展示修正版與條列解釋。",
+  "aliases": ["NG vs OK", "雙面板對比", "錯誤 vs 正確"],
+  "tags": ["compare", "split", "ng-ok"],
+  "themeHints": ["warm", "tech", "business"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "split-compare",
+    "orientation": "dual-column",
+    "minItems": 2,
+    "maxItems": 2,
+    "supportsInsightBar": false
+  },
+  "slots": ["eyebrow", "title", "subtitle", "negativePanel", "positivePanel"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-secondary",
+      "border": "border"
+    }
+  },
+  "defaults": {
+    "contentDensity": "medium",
+    "componentScale": "comfortable",
+    "negativeBorderStyle": "dashed",
+    "positiveBorderStyle": "solid",
+    "promptBoxOpacity": 0.6
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "maxWordsPerPanel": 56
+  }
+}

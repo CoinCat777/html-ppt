@@ -36,6 +36,10 @@ h1 { font-size: 24px; font-weight: 600; color: #1a1918; margin-bottom: 6px; }
   display: inline-block; font-size: 11px; font-weight: 500;
   padding: 0.2em 0.6em; border-radius: 4px;
 }
+.card-meta {
+  margin-top: 10px; font-size: 11px; color: #8a817b;
+  font-family: monospace;
+}
 .ok   { background: #e6f6ef; color: #0e5b41; }
 .warn { background: #fdf5e8; color: #7a4d1a; }
 </style>
@@ -49,47 +53,61 @@ h1 { font-size: 24px; font-weight: 600; color: #1a1918; margin-bottom: 6px; }
   </p>
 
   <div class="grid">
-    <a class="card" href="flowchart-vertical.html">
+    <a class="card" href="flowchart-vertical.html" data-pattern="flowchart-vertical" data-json="patterns/flowchart-vertical.json" data-flexible="true" data-themes="warm,minimal,business">
       <div class="card-name">flowchart-vertical</div>
       <div class="card-title">垂直步驟循環圖</div>
       <div class="card-alias">垂直循環圖 / loop diagram / PDCA</div>
       <span class="card-note ok">✓ 4 節點，高度充裕</span>
+      <div class="card-meta">json: patterns/flowchart-vertical.json</div>
     </a>
-    <a class="card" href="compare-pairs.html">
+    <a class="card" href="compare-pairs.html" data-pattern="compare-pairs" data-json="patterns/compare-pairs.json" data-flexible="true" data-themes="warm,minimal,business">
       <div class="card-name">compare-pairs</div>
       <div class="card-title">左右對照卡片組</div>
       <div class="card-alias">problem-solution / 心理障礙卡 / before-after</div>
       <span class="card-note warn">⚠ 5 組略緊，建議 4 組以內</span>
+      <div class="card-meta">json: patterns/compare-pairs.json</div>
     </a>
-    <a class="card" href="flowchart-horizontal.html">
+    <a class="card" href="flowchart-horizontal.html" data-pattern="flowchart-horizontal" data-json="patterns/flowchart-horizontal.json" data-flexible="true" data-themes="warm,tech,minimal">
       <div class="card-name">flowchart-horizontal</div>
       <div class="card-title">水平步驟流程圖</div>
       <div class="card-alias">水平流程 / 4-step flow / 操作步驟</div>
       <span class="card-note ok">✓ 單行，高度非常充裕</span>
+      <div class="card-meta">json: patterns/flowchart-horizontal.json</div>
     </a>
-    <a class="card" href="ng-ok-split.html">
+    <a class="card" href="ng-ok-split.html" data-pattern="ng-ok-split" data-json="patterns/ng-ok-split.json" data-flexible="true" data-themes="warm,tech,business">
       <div class="card-name">ng-ok-split</div>
       <div class="card-title">反例 vs 正例 雙面板</div>
       <div class="card-alias">NG vs OK / 雙面板對比 / 錯誤 vs 正確</div>
       <span class="card-note ok">✓ 高度充裕</span>
+      <div class="card-meta">json: patterns/ng-ok-split.json</div>
     </a>
-    <a class="card" href="timeline-dual.html">
+    <a class="card" href="timeline-dual.html" data-pattern="timeline-dual" data-json="patterns/timeline-dual.json" data-flexible="true" data-themes="warm,business,minimal">
       <div class="card-name">timeline-dual</div>
       <div class="card-title">雙欄垂直時間線</div>
       <div class="card-alias">學習路線 / two-path / 並行路徑</div>
       <span class="card-note ok">✓ 3 步驟版，高度充裕</span>
+      <div class="card-meta">json: patterns/timeline-dual.json</div>
     </a>
-    <a class="card" href="vs-duel.html">
+    <a class="card" href="vs-duel.html" data-pattern="vs-duel" data-json="patterns/vs-duel.json" data-flexible="true" data-themes="warm,business,tech">
       <div class="card-name">vs-duel</div>
       <div class="card-title">雙卡對決（VS 徽章版）</div>
       <div class="card-alias">傳統 vs 新方法 / A vs B 選擇 / 戲劇性對決</div>
       <span class="card-note ok">✓ 4 條列版，高度充裕</span>
+      <div class="card-meta">json: patterns/vs-duel.json</div>
     </a>
-    <a class="card" href="stat-grid.html">
+    <a class="card" href="stat-grid.html" data-pattern="stat-grid" data-json="patterns/stat-grid.json" data-flexible="true" data-themes="warm,business,minimal,tech">
       <div class="card-name">stat-grid</div>
       <div class="card-title">數字儀表板卡片格</div>
       <div class="card-alias">numbers dashboard / KPI cards / 數據亮點</div>
       <span class="card-note ok">✓ 2×3 格，高度非常充裕</span>
+      <div class="card-meta">json: patterns/stat-grid.json</div>
+    </a>
+    <a class="card" href="warm-card-pattern.html" data-pattern="warm-card-pattern" data-json="patterns/warm-card-pattern.json" data-flexible="true" data-themes="warm,minimal,business">
+      <div class="card-name">warm-card-pattern</div>
+      <div class="card-title">暖色編號卡片堆疊</div>
+      <div class="card-alias">stacked info cards / numbered steps / 教學步驟卡</div>
+      <span class="card-note ok">✓ 教學、方法拆解、逐步說明</span>
+      <div class="card-meta">json: patterns/warm-card-pattern.json</div>
     </a>
   </div>
 </div>

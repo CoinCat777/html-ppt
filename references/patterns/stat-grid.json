@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "stat-grid",
+  "title": "數字儀表板卡片格",
+  "htmlDemo": "../stat-grid.html",
+  "summary": "均分數字卡片格，以大數字承擔視覺重心，適合 KPI、里程碑與可信度頁面。",
+  "aliases": ["numbers dashboard", "KPI cards", "數據亮點"],
+  "tags": ["stats", "grid", "kpi"],
+  "themeHints": ["warm", "business", "minimal", "tech"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "grid",
+    "orientation": "matrix",
+    "minItems": 4,
+    "maxItems": 6,
+    "supportsInsightBar": true
+  },
+  "slots": ["eyebrow", "title", "stats", "insight"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-muted",
+      "border": "border"
+    }
+  },
+  "defaults": {
+    "contentDensity": "light",
+    "componentScale": "comfortable",
+    "columns": 3,
+    "rows": 2,
+    "numberEmphasis": "strong-serif"
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "maxWordsPerStat": 10
+  }
+}

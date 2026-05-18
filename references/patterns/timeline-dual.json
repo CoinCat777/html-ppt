@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "timeline-dual",
+  "title": "雙欄垂直時間線",
+  "htmlDemo": "../timeline-dual.html",
+  "summary": "兩條並行時間線，適合雙路徑學習建議、角色分工、時間節奏比較。",
+  "aliases": ["two-path", "雙欄時間線", "並行路徑"],
+  "tags": ["timeline", "dual", "roadmap"],
+  "themeHints": ["warm", "business", "minimal"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "timeline",
+    "orientation": "dual-column",
+    "minItems": 2,
+    "maxItems": 5,
+    "supportsInsightBar": true
+  },
+  "slots": ["eyebrow", "title", "columns", "insight"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-secondary",
+      "border": "border"
+    }
+  },
+  "defaults": {
+    "contentDensity": "medium",
+    "componentScale": "comfortable",
+    "columnGap": 48,
+    "dotSize": 10,
+    "lineThickness": 2
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "maxWordsPerStep": 18
+  }
+}

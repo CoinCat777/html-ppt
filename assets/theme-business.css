@@ -1,129 +1,190 @@
 /* ============================================================
-   html-ppt  |  Theme: Business (商務風)
-   深藍底 / 金色強調 / Noto Serif TC + Noto Sans TC
+   html-ppt  |  Theme: Business (亮底香檳金)
+   Light default / Dark variant included
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap');
 
-:root {
-  /* --- Palette --- */
-  --bg-primary:    #0d1b2a;
-  --bg-secondary:  #1a2e44;
-  --bg-card:       #1e3452;
-
-  --text-primary:  #f0ead6;
-  --text-secondary:#b8c4cf;
-  --text-muted:    #6b8299;
-
-  --accent:        #c9a94e;
-  --accent-light:  #e8d07a;
-  --accent-dark:   #9e7c28;
-
-  --border:        rgba(201,169,78,0.25);
-  --divider:       rgba(240,234,214,0.1);
-
-  /* --- Typography --- */
-  --font-heading:  'Noto Serif TC', 'Georgia', serif;
-  --font-body:     'Noto Sans TC', 'PingFang TC', sans-serif;
-
-  --size-display:  clamp(2.2rem, 4vw, 3.8rem);
-  --size-h1:       clamp(1.8rem, 3vw, 2.8rem);
-  --size-h2:       clamp(1.3rem, 2.2vw, 1.9rem);
-  --size-body:     clamp(0.95rem, 1.2vw, 1.15rem);
-  --size-small:    0.85rem;
-
-  --lh-heading:    1.25;
-  --lh-body:       1.75;
-
-  /* --- Spacing --- */
-  --slide-pad-x:   6vw;
-  --slide-pad-y:   5vh;
-
-  /* --- UI Chrome --- */
-  --progress-h:        4px;
-  --progress-color:    var(--accent);
-  --toc-width:         280px;
-  --toc-bg:            rgba(13,27,42,0.97);
-  --toc-border:        var(--accent);
-
-  /* --- Transition --- */
-  --transition-slide: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-ui:    0.25s ease;
+:root,
+html[data-theme-mode='light'],
+body[data-theme-mode='light'] {
+  --bg-primary: #F4F0EA;
+  --bg-secondary: #F9F6F0;
+  --bg-card: #FFFFFF;
+  --text-primary: #2A3037;
+  --text-secondary: #646A73;
+  --text-muted: #8B8F96;
+  --accent: #B9935A;
+  --accent-light: #D4B27B;
+  --accent-dark: #8E6F3F;
+  --accent-subtle: #F2EADD;
+  --border: #E5E0D8;
+  --divider: #EDE6DC;
+  --shadow: rgba(42, 48, 55, 0.04);
+  --font-heading: 'Noto Serif TC', 'Playfair Display', serif;
+  --font-body: 'Noto Sans TC', 'Montserrat', 'PingFang TC', sans-serif;
+  --font-number: 'Playfair Display', 'Noto Serif TC', serif;
+  --size-display: clamp(2.2rem, 4vw, 3.8rem);
+  --size-h1: clamp(1.8rem, 3vw, 2.8rem);
+  --size-h2: clamp(1.15rem, 1.8vw, 1.5rem);
+  --size-body: clamp(0.98rem, 1.2vw, 1.12rem);
+  --size-small: 0.84rem;
+  --lh-heading: 1.2;
+  --lh-body: 1.75;
+  --slide-pad-x: 7vw;
+  --slide-pad-y: 5vh;
+  --progress-h: 4px;
+  --progress-color: var(--accent);
+  --toc-width: 280px;
+  --toc-bg: rgba(255, 255, 255, 0.92);
+  --toc-border: var(--accent);
+  --transition-slide: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-ui: 0.22s ease;
 }
 
-/* ---- Base Reset ---- */
+html[data-theme-mode='dark'],
+body[data-theme-mode='dark'] {
+  --bg-primary: #171B22;
+  --bg-secondary: #262D36;
+  --bg-card: #20262E;
+  --text-primary: #F5F1EA;
+  --text-secondary: #C6BEB4;
+  --text-muted: #9F968B;
+  --accent: #C4A06A;
+  --accent-light: #E1C186;
+  --accent-dark: #9B794B;
+  --accent-subtle: rgba(196, 160, 106, 0.14);
+  --border: #38322D;
+  --divider: #2E343C;
+  --shadow: rgba(0, 0, 0, 0.26);
+  --toc-bg: rgba(23, 27, 34, 0.94);
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
-  width: 100%; height: 100%; overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  transition: background var(--transition-ui), color var(--transition-ui);
 }
 
-/* ---- Headings ---- */
 h1, h2 { font-family: var(--font-heading); line-height: var(--lh-heading); }
-h1 { font-size: var(--size-h1); font-weight: 700; }
-h2 { font-size: var(--size-h2); font-weight: 400; color: var(--accent); }
+h1 { font-size: var(--size-h1); font-weight: 700; letter-spacing: -0.03em; }
+h2 {
+  font-size: var(--size-h2);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+  font-style: italic;
+}
 .display-title { font-size: var(--size-display); }
 
-/* ---- Accent Elements ---- */
-.accent        { color: var(--accent); }
-.accent-bar    { display: block; width: 48px; height: 3px; background: var(--accent); margin: 0.75rem 0 1.25rem; }
-.stat-number   { font-size: clamp(2rem, 4vw, 3.5rem); font-family: var(--font-heading); color: var(--accent-light); font-weight: 700; }
-.stat-label    { font-size: var(--size-small); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; }
-.kv-label      { color: var(--text-muted); font-size: var(--size-small); text-transform: uppercase; letter-spacing: 0.06em; }
-.kv-value      { color: var(--text-primary); font-size: var(--size-body); font-weight: 500; }
+.accent { color: var(--accent); }
+.accent-bar {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0.8rem 0 1.25rem;
+  border-radius: 999px;
+}
+.stat-number {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-family: var(--font-number);
+  color: var(--accent);
+  font-weight: 700;
+}
+.stat-label,
+.eyebrow,
+.label {
+  font-size: var(--size-small);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
-/* ---- Card ---- */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 4px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1.6rem;
+  box-shadow: 0 12px 32px var(--shadow);
 }
 
-/* ---- Progress Bar ---- */
 #progress-bar-wrapper {
-  position: fixed; bottom: 0; left: 0; width: 100%;
-  height: var(--progress-h); z-index: 100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--progress-h);
+  z-index: 100;
   background: var(--divider);
 }
+
 #progress-bar {
-  height: 100%; width: 0%;
-  background: linear-gradient(90deg, var(--accent-dark), var(--accent-light));
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
   transition: width var(--transition-ui);
 }
 
-/* ---- TOC (Left Drawer) ---- */
 #toc-trigger {
-  position: fixed; left: 0; top: 0; width: 12px; height: 100%;
-  z-index: 200; cursor: pointer;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  z-index: 200;
+  cursor: pointer;
 }
+
 #toc-drawer {
-  position: fixed; left: calc(-1 * var(--toc-width)); top: 0;
-  width: var(--toc-width); height: 100%;
+  position: fixed;
+  left: calc(-1 * var(--toc-width));
+  top: 0;
+  width: var(--toc-width);
+  height: 100%;
   background: var(--toc-bg);
-  border-right: 2px solid var(--toc-border);
+  border-right: 1px solid var(--border);
   z-index: 199;
   transition: left var(--transition-ui);
   padding: 3rem 1.5rem 2rem;
-  display: flex; flex-direction: column; gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 4px 0 22px var(--shadow);
 }
-#toc-drawer.open  { left: 0; }
-#toc-drawer h3    { font-family: var(--font-heading); color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+
+#toc-drawer.open { left: 0; }
+#toc-drawer h3 {
+  font-family: 'Playfair Display', var(--font-heading);
+  color: var(--accent);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
 .toc-item {
   font-size: var(--size-small);
   color: var(--text-secondary);
   cursor: pointer;
-  padding: 0.45rem 0.75rem;
-  border-radius: 3px;
-  transition: color var(--transition-ui), background var(--transition-ui);
+  padding: 0.48rem 0.72rem;
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  transition: color var(--transition-ui), background var(--transition-ui), border-color var(--transition-ui);
 }
-.toc-item:hover, .toc-item.active {
-  color: var(--accent-light);
-  background: rgba(201,169,78,0.1);
+
+.toc-item:hover,
+.toc-item.active {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-left-color: var(--accent);
 }

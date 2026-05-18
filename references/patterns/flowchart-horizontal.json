@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "flowchart-horizontal",
+  "title": "水平步驟流程圖",
+  "htmlDemo": "../flowchart-horizontal.html",
+  "summary": "水平線性步驟圖，以圓形節點與細連線呈現順序關係，適合操作流程與四步驟說明。",
+  "aliases": ["4-step flow", "步驟流程圖", "水平流程"],
+  "tags": ["flow", "horizontal", "steps"],
+  "themeHints": ["warm", "tech", "minimal"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "flow",
+    "orientation": "horizontal",
+    "minItems": 3,
+    "maxItems": 6,
+    "supportsInsightBar": true
+  },
+  "slots": ["eyebrow", "title", "nodes", "insight"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-secondary",
+      "border": "border"
+    }
+  },
+  "defaults": {
+    "contentDensity": "light",
+    "componentScale": "comfortable",
+    "circleSize": 40,
+    "lineThickness": 2,
+    "connectorStyle": "straight-line"
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "maxWordsPerNode": 18
+  }
+}

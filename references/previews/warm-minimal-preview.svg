@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGlow-warm-minimal" x1="180" y1="80" x2="1020" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3EFE9"/>
+      <stop offset="1" stop-color="#F7F5F0"/>
+    </linearGradient>
+    <filter id="shadow-warm-minimal" x="0" y="0" width="1200" height="760" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="rgba(43, 39, 35, 0.02)" />
+    </filter>
+  </defs>
+  <rect width="1200" height="760" rx="32" fill="#F7F5F0"/>
+  <rect x="40" y="40" width="1120" height="680" rx="28" fill="url(#bgGlow-warm-minimal)"/>
+  <rect x="82" y="92" width="688" height="576" rx="28" fill="#FCFAF6" filter="url(#shadow-warm-minimal)"/>
+  <rect x="806" y="92" width="312" height="264" rx="28" fill="#FCFAF6" filter="url(#shadow-warm-minimal)"/>
+  <rect x="806" y="388" width="312" height="280" rx="28" fill="#FCFAF6" filter="url(#shadow-warm-minimal)"/>
+  <rect x="82" y="92" width="688" height="10" rx="5" fill="#EDE8E0"/>
+  <rect x="82" y="92" width="352" height="10" rx="5" fill="#2B2723"/>
+  <text x="130" y="150" fill="#343A40" font-size="20" font-family="Noto Sans TC" font-weight="700" letter-spacing="2">03</text>
+  <text x="198" y="150" fill="#7D756D" font-size="18" font-family="Noto Sans TC" font-weight="600">Light Default</text>
+  <text x="130" y="206" fill="#2B2723" font-size="50" font-family="Cormorant Garamond" font-weight="700">溫潤人文極簡</text>
+  <text x="130" y="252" fill="#7D756D" font-size="28" font-family="Cormorant Garamond" font-style="italic">Warm Minimal</text>
+  <text x="130" y="318" fill="#2B2723" font-size="24" font-family="Noto Sans TC" font-weight="600">品牌語氣 / Theme Voice</text>
+  <text x="130" y="356" fill="#7D756D" font-size="21" font-family="Noto Sans TC" font-weight="400" font-style="normal"><tspan x="130" dy="0">清晰的資訊節奏，保留設計</tspan><tspan x="130" dy="28">感與閱讀舒適度</tspan></text>
+  <text x="130" y="412" fill="#7D756D" font-size="20" font-family="Noto Sans TC" font-weight="400" font-style="normal"><tspan x="130" dy="0">Clear structure, calm contrast,</tspan><tspan x="130" dy="26">and a sharp visual identity</tspan></text>
+  <rect x="130" y="458" width="184" height="132" rx="22" fill="#F3EFE9" stroke="#E7E0D6"/>
+  <text x="156" y="512" fill="#7D756D" font-size="18" font-family="Noto Sans TC" font-weight="700">KPI</text>
+  <text x="156" y="564" fill="#343A40" font-size="52" font-family="Cormorant Garamond" font-weight="700">84%</text>
+  <text x="156" y="598" fill="#7D756D" font-size="19" font-family="Noto Sans TC">Audience retention</text>
+  <rect x="340" y="458" width="322" height="132" rx="22" fill="#F3EFE9" stroke="#E7E0D6"/>
+  <text x="368" y="512" fill="#2B2723" font-size="20" font-family="Noto Sans TC" font-weight="700">Primary / Card / Accent</text>
+  <rect x="368" y="548" width="72" height="18" rx="9" fill="#F7F5F0" stroke="#E7E0D6"/>
+  <rect x="456" y="548" width="72" height="18" rx="9" fill="#FCFAF6" stroke="#E7E0D6"/>
+  <rect x="544" y="548" width="72" height="18" rx="9" fill="#343A40" />
+  <text x="368" y="578" fill="#7D756D" font-size="16" font-family="Noto Sans TC" font-weight="400" font-style="normal"><tspan x="368" dy="0">A restrained editorial theme</tspan><tspan x="368" dy="19">with warm whites, soft</tspan></text>
+  <text x="840" y="150" fill="#7D756D" font-size="19" font-family="Noto Sans TC" font-weight="700">Icon / Accent</text>
+  <g transform="translate(836 186)"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 29C14 22 18 18 21 18C24 18 28 22 32 29" stroke="#343A40" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="21" cy="15" r="4" stroke="#343A40" stroke-width="2"/>
+      <path d="M8 33H34" stroke="#343A40" stroke-width="2" stroke-linecap="round"/>
+    </svg></g>
+  <text x="836" y="320" fill="#7D756D" font-size="19" font-family="Noto Sans TC" font-weight="700">Typography Pairing</text>
+  <text x="836" y="358" fill="#2B2723" font-size="24" font-family="Cormorant Garamond" font-weight="700">Cormorant Garamond</text>
+  <text x="836" y="392" fill="#7D756D" font-size="20" font-family="Noto Sans TC">Noto Sans TC</text>
+  <text x="836" y="450" fill="#7D756D" font-size="19" font-family="Noto Sans TC" font-weight="700">Mood</text>
+  <text x="836" y="486" fill="#2B2723" font-size="22" font-family="Noto Sans TC" font-weight="700">溫潤人文極簡</text>
+  <text x="836" y="522" fill="#7D756D" font-size="17" font-family="Noto Sans TC" font-weight="400" font-style="normal"><tspan x="836" dy="0">人文襯線與暖白背景，安靜、克制、偏</tspan><tspan x="836" dy="21">editorial</tspan></text>
+  <rect x="836" y="582" width="224" height="8" rx="4" fill="#EDE8E0"/>
+  <rect x="836" y="582" width="126" height="8" rx="4" fill="#2B2723"/>
+  <text x="836" y="624" fill="#343A40" font-size="16" font-family="Noto Sans TC" font-weight="700">Preview / Auto Generated</text>
+</svg>

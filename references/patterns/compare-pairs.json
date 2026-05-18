@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "compare-pairs",
+  "title": "左右對照卡片組",
+  "htmlDemo": "../compare-pairs.html",
+  "summary": "左欄問題、右欄解法，中間以簡潔箭頭連接，底部可加總結橫幅。",
+  "aliases": ["problem-solution", "before-after", "心理障礙卡"],
+  "tags": ["compare", "pairs", "cards"],
+  "themeHints": ["warm", "minimal", "business"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "compare",
+    "orientation": "horizontal",
+    "minItems": 3,
+    "maxItems": 5,
+    "supportsInsightBar": true
+  },
+  "slots": ["eyebrow", "title", "pairs", "summary"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-secondary",
+      "border": "border"
+    }
+  },
+  "defaults": {
+    "contentDensity": "medium",
+    "componentScale": "comfortable",
+    "rowGap": 8,
+    "connectorStyle": "center-arrow",
+    "pairToneMode": "semantic-positive-negative"
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "maxWordsPerCard": 24
+  }
+}

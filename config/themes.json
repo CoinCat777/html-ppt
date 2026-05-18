@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "defaultTheme": "business",
+  "defaultMode": "light",
+  "themes": [
+    {
+      "id": "business",
+      "order": 1,
+      "displayName": {
+        "zh": "商務香檳金",
+        "en": "Business"
+      },
+      "preview": "references/previews/business-preview.png",
+      "description": {
+        "zh": "亮底香檳金商務風，沉穩、雜誌感、適合提案與高階簡報。",
+        "en": "Refined champagne-gold business theme for proposals, executive decks, and reports."
+      },
+      "tokens": {
+        "light": {
+          "bg_main": "#F4F0EA",
+          "bg_card": "#FFFFFF",
+          "bg_subtle": "#F9F6F0",
+          "text_primary": "#2A3037",
+          "text_secondary": "#646A73",
+          "text_muted": "#8B8F96",
+          "accent": "#B9935A",
+          "accent_soft": "#EDE3D2",
+          "accent_strong": "#8E6F3F",
+          "border": "#E5E0D8",
+          "divider": "#EDE6DC",
+          "toc_active_bg": "#F9F6F0",
+          "toc_active_border": "#B9935A",
+          "progress_track": "#E5E0D8",
+          "progress_fill": "#B9935A",
+          "shadow": "rgba(42, 48, 55, 0.04)",
+          "card_radius": "12px"
+        },
+        "dark": {
+          "bg_main": "#171B22",
+          "bg_card": "#20262E",
+          "bg_subtle": "#262D36",
+          "text_primary": "#F5F1EA",
+          "text_secondary": "#C6BEB4",
+          "text_muted": "#9F968B",
+          "accent": "#C4A06A",
+          "accent_soft": "rgba(196, 160, 106, 0.14)",
+          "accent_strong": "#E1C186",
+          "border": "#38322D",
+          "divider": "#2E343C",
+          "toc_active_bg": "rgba(196, 160, 106, 0.12)",
+          "toc_active_border": "#C4A06A",
+          "progress_track": "#2E343C",
+          "progress_fill": "#C4A06A",
+          "shadow": "rgba(0, 0, 0, 0.26)",
+          "card_radius": "12px"
+        }
+      },
+      "fonts": {
+        "font_heading_zh": "Noto Serif TC",
+        "font_body_zh": "Noto Sans TC",
+        "font_heading_en": "Playfair Display",
+        "font_body_en": "Montserrat",
+        "font_fallback": "'PingFang TC', 'Microsoft JhengHei', sans-serif"
+      },
+      "ui": {
+        "progress_height": "4px",
+        "progress_radius": "2px",
+        "toc_radius": "10px",
+        "toc_border_width": "3px",
+        "card_padding": "1.6rem",
+        "slide_pad_x": "7vw",
+        "slide_pad_y": "5vh"
+      },
+      "metadata": {
+        "legacyAliases": [
+          "business"
+        ],
+        "recommendedUse": [
+          "proposal",
+          "report",
+          "executive"
+        ]
+      }
+    },
+    {
+      "id": "light-tech",
+      "order": 2,
+      "displayName": {
+        "zh": "亮色科技青",
+        "en": "Light Tech"
+      },
+      "preview": "references/previews/light-tech-preview.png",
+      "description": {
+        "zh": "冷白底科技青，資訊感清楚、適合產品說明、AI 工具與資料簡報。",
+        "en": "Bright, modern tech theme with glacier whites and restrained cyan accents."
+      },
+      "tokens": {
+        "light": {
+          "bg_main": "#F1F5F9",
+          "bg_card": "#FFFFFF",
+          "bg_subtle": "#EAF2F8",
+          "text_primary": "#0F172A",
+          "text_secondary": "#475569",
+          "text_muted": "#7C8A9A",
+          "accent": "#00A3AD",
+          "accent_soft": "#E0F2FE",
+          "accent_strong": "#0A7D84",
+          "border": "#D8E3EC",
+          "divider": "#E2E8F0",
+          "toc_active_bg": "#E0F2FE",
+          "toc_active_border": "#00A3AD",
+          "progress_track": "#E2E8F0",
+          "progress_fill": "#00A3AD",
+          "shadow": "rgba(15, 23, 42, 0.06)",
+          "card_radius": "14px"
+        },
+        "dark": {
+          "bg_main": "#0E1726",
+          "bg_card": "#152133",
+          "bg_subtle": "#1A2B3F",
+          "text_primary": "#EBF4FF",
+          "text_secondary": "#A8B6C8",
+          "text_muted": "#7E90A8",
+          "accent": "#23C4CC",
+          "accent_soft": "rgba(35, 196, 204, 0.14)",
+          "accent_strong": "#7DE7EA",
+          "border": "#22344A",
+          "divider": "#1E2E42",
+          "toc_active_bg": "rgba(35, 196, 204, 0.12)",
+          "toc_active_border": "#23C4CC",
+          "progress_track": "#1E2E42",
+          "progress_fill": "#23C4CC",
+          "shadow": "rgba(0, 0, 0, 0.28)",
+          "card_radius": "14px"
+        }
+      },
+      "fonts": {
+        "font_heading_zh": "Noto Sans TC",
+        "font_body_zh": "Noto Sans TC",
+        "font_heading_en": "Space Grotesk",
+        "font_body_en": "Space Grotesk",
+        "font_fallback": "'Inter', 'Segoe UI', sans-serif"
+      },
+      "ui": {
+        "progress_height": "4px",
+        "progress_radius": "2px",
+        "toc_radius": "10px",
+        "toc_border_width": "3px",
+        "card_padding": "1.55rem",
+        "slide_pad_x": "6.5vw",
+        "slide_pad_y": "5vh"
+      },
+      "metadata": {
+        "legacyAliases": [
+          "tech"
+        ],
+        "recommendedUse": [
+          "product",
+          "ai",
+          "data"
+        ]
+      }
+    },
+    {
+      "id": "warm-minimal",
+      "order": 3,
+      "displayName": {
+        "zh": "溫潤人文極簡",
+        "en": "Warm Minimal"
+      },
+      "preview": "references/previews/warm-minimal-preview.png",
+      "description": {
+        "zh": "人文襯線與暖白背景，安靜、克制、偏 editorial 的閱讀型主題。",
+        "en": "A restrained editorial theme with warm whites, soft shadows, and humanist serif accents."
+      },
+      "tokens": {
+        "light": {
+          "bg_main": "#F7F5F0",
+          "bg_card": "#FCFAF6",
+          "bg_subtle": "#F3EFE9",
+          "text_primary": "#2B2723",
+          "text_secondary": "#7D756D",
+          "text_muted": "#A0958C",
+          "accent": "#343A40",
+          "accent_soft": "#F3EFE9",
+          "accent_strong": "#1E2125",
+          "border": "#E7E0D6",
+          "divider": "#EDE8E0",
+          "toc_active_bg": "#F3EFE9",
+          "toc_active_border": "#343A40",
+          "progress_track": "#EDE8E0",
+          "progress_fill": "#2B2723",
+          "shadow": "rgba(43, 39, 35, 0.02)",
+          "card_radius": "16px"
+        },
+        "dark": {
+          "bg_main": "#151311",
+          "bg_card": "#1D1A17",
+          "bg_subtle": "#26211D",
+          "text_primary": "#F2EEE7",
+          "text_secondary": "#C8BFB5",
+          "text_muted": "#9E9387",
+          "accent": "#D4CEC4",
+          "accent_soft": "rgba(212, 206, 196, 0.12)",
+          "accent_strong": "#F7F2E8",
+          "border": "#2E2925",
+          "divider": "#27231F",
+          "toc_active_bg": "rgba(212, 206, 196, 0.10)",
+          "toc_active_border": "#D4CEC4",
+          "progress_track": "#27231F",
+          "progress_fill": "#F2EEE7",
+          "shadow": "rgba(0, 0, 0, 0.3)",
+          "card_radius": "16px"
+        }
+      },
+      "fonts": {
+        "font_heading_zh": "Noto Serif TC",
+        "font_body_zh": "Noto Sans TC",
+        "font_heading_en": "Cormorant Garamond",
+        "font_body_en": "Noto Sans TC",
+        "font_fallback": "'PingFang TC', 'Microsoft JhengHei', sans-serif"
+      },
+      "ui": {
+        "progress_height": "3px",
+        "progress_radius": "3px",
+        "toc_radius": "12px",
+        "toc_border_width": "0px",
+        "card_padding": "1.7rem",
+        "slide_pad_x": "7.5vw",
+        "slide_pad_y": "5.5vh"
+      },
+      "metadata": {
+        "legacyAliases": [
+          "minimal"
+        ],
+        "recommendedUse": [
+          "editorial",
+          "brand",
+          "education"
+        ]
+      }
+    },
+    {
+      "id": "brand-warm",
+      "order": 4,
+      "displayName": {
+        "zh": "品牌暖調",
+        "en": "Brand Warm"
+      },
+      "preview": "references/previews/brand-warm-preview.png",
+      "description": {
+        "zh": "Claude 調性延伸的奶油米與磚橘，帶品牌溫度、適合故事與教學型報告。",
+        "en": "Claude-inspired cream and brick palette with stronger brand warmth and softer hospitality."
+      },
+      "tokens": {
+        "light": {
+          "bg_main": "#F5EDE0",
+          "bg_card": "#FAF7F4",
+          "bg_subtle": "#F5E8E2",
+          "text_primary": "#1A1918",
+          "text_secondary": "#6B6460",
+          "text_muted": "#9E9590",
+          "accent": "#CC5833",
+          "accent_soft": "#F5E8E2",
+          "accent_strong": "#AA4424",
+          "border": "#E0D8D0",
+          "divider": "#EBE4DB",
+          "toc_active_bg": "#F5E8E2",
+          "toc_active_border": "#CC5833",
+          "progress_track": "#EBE4DB",
+          "progress_fill": "#CC5833",
+          "shadow": "rgba(60, 40, 20, 0.06)",
+          "card_radius": "14px"
+        },
+        "dark": {
+          "bg_main": "#141312",
+          "bg_card": "#1C1A19",
+          "bg_subtle": "#262220",
+          "text_primary": "#F2EFEB",
+          "text_secondary": "#CEC6BF",
+          "text_muted": "#A99E95",
+          "accent": "#D78A5F",
+          "accent_soft": "rgba(215, 138, 95, 0.14)",
+          "accent_strong": "#F0B38D",
+          "border": "#2C2A29",
+          "divider": "#242220",
+          "toc_active_bg": "rgba(215, 138, 95, 0.12)",
+          "toc_active_border": "#D78A5F",
+          "progress_track": "#242220",
+          "progress_fill": "#D78A5F",
+          "shadow": "rgba(0, 0, 0, 0.35)",
+          "card_radius": "14px"
+        }
+      },
+      "fonts": {
+        "font_heading_zh": "Lora",
+        "font_body_zh": "Noto Sans TC",
+        "font_heading_en": "Lora",
+        "font_body_en": "DM Sans",
+        "font_fallback": "'PingFang TC', 'Microsoft JhengHei', sans-serif"
+      },
+      "ui": {
+        "progress_height": "3px",
+        "progress_radius": "3px",
+        "toc_radius": "8px",
+        "toc_border_width": "0px",
+        "card_padding": "1.7rem",
+        "slide_pad_x": "8vw",
+        "slide_pad_y": "6vh"
+      },
+      "metadata": {
+        "legacyAliases": [
+          "warm"
+        ],
+        "recommendedUse": [
+          "storytelling",
+          "learning",
+          "community"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "vs-duel",
+  "title": "雙卡對決（VS 徽章版）",
+  "htmlDemo": "../vs-duel.html",
+  "summary": "兩張大卡片並排，中間以 VS 徽章製造視覺衝突，適合路徑抉擇與方法對決。",
+  "aliases": ["A vs B", "傳統 vs 新方法", "戲劇性對決"],
+  "tags": ["compare", "vs", "duel"],
+  "themeHints": ["warm", "business", "tech"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "duel",
+    "orientation": "dual-column",
+    "minItems": 2,
+    "maxItems": 2,
+    "supportsInsightBar": false
+  },
+  "slots": ["eyebrow", "title", "subtitle", "leftCard", "rightCard"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-secondary",
+      "border": "border"
+    }
+  },
+  "defaults": {
+    "contentDensity": "medium",
+    "componentScale": "comfortable",
+    "cardGap": 60,
+    "badgeSize": 52,
+    "bottomBoxStyle": "dashed"
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "maxBulletsPerCard": 5
+  }
+}

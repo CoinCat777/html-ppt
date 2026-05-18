@@ -1,6 +1,7 @@
 # html-ppt Layout Pattern 目錄
 
-視覺 demo 見各 pattern 獨立 HTML 檔；索引見 `1.html`。
+視覺 demo 見各 pattern 獨立 HTML 檔；索引見 `patternindex.html`。
+如需 theme token、彈性參數與約束，另查 `patterns/index.json` 與 `patterns/*.json`。
 本文件為 Phase 2 開發時的**結構速查表**，每個條目列出關鍵 CSS 決策與實作陷阱。
 
 ---
@@ -229,3 +230,35 @@
 - `.card` → `border-radius:14px; background:var(--bg-card); box-shadow:淡陰影`
 
 **版面高度：** 2×3 格約 260px，版面非常充裕
+
+---
+
+### warm-card-pattern
+**用途：** 3–5 張暖色資訊卡垂直堆疊，左側編號徽章，右側可放手繪感圖示或流程圖解
+**別名：** stacked info cards / numbered steps / 教學步驟卡 / methodology stack
+**視覺 demo：** `warm-card-pattern.html`
+
+**HTML 骨架：**
+```html
+<div class="warm-stack">
+  <div class="warm-card">
+    <div class="warm-badge">01</div>
+    <div class="warm-copy">
+      <div class="warm-card-title">技能可重用</div>
+      <div class="warm-card-desc">把常用流程變成可呼叫工具</div>
+    </div>
+    <div class="warm-icon">inline SVG</div>
+  </div>
+  <div class="warm-connector"></div>
+</div>
+```
+
+**關鍵 CSS：**
+- `.warm-stack` → `display:flex; flex-direction:column; gap:18px`
+- `.warm-card` → `display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:28px`
+- `.warm-badge` → 實心圓形徽章，尺寸用 CSS 變數控制（預設卡片高度 28%）
+- `.warm-connector` → 細線或箭頭，預設使用單一路徑向下引導
+- `.warm-card::before/::after` 或頁面層裝飾 → 角落點陣、大圓弧背景、淡陰影卡片
+
+**版面高度：** 3 張卡片在 720p 內安全，4–5 張需縮減 padding 或改為兩欄
+**實作注意：** 色彩優先吃 theme token，不要把暖橘色硬寫死；若 theme 不是 `warm`，保留布局但讓 accent / card / text 走主題變數

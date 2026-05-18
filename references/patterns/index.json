@@ -1,0 +1,74 @@
+[
+  {
+    "id": "flowchart-vertical",
+    "title": "垂直步驟循環圖",
+    "html": "flowchart-vertical.html",
+    "schema": "patterns/flowchart-vertical.json",
+    "tags": ["flow", "vertical", "loop"],
+    "themeHints": ["warm", "business", "minimal"],
+    "flexible": true
+  },
+  {
+    "id": "compare-pairs",
+    "title": "左右對照卡片組",
+    "html": "compare-pairs.html",
+    "schema": "patterns/compare-pairs.json",
+    "tags": ["compare", "pairs", "cards"],
+    "themeHints": ["warm", "minimal", "business"],
+    "flexible": true
+  },
+  {
+    "id": "flowchart-horizontal",
+    "title": "水平步驟流程圖",
+    "html": "flowchart-horizontal.html",
+    "schema": "patterns/flowchart-horizontal.json",
+    "tags": ["flow", "horizontal", "steps"],
+    "themeHints": ["warm", "tech", "minimal"],
+    "flexible": true
+  },
+  {
+    "id": "ng-ok-split",
+    "title": "反例 vs 正例 雙面板",
+    "html": "ng-ok-split.html",
+    "schema": "patterns/ng-ok-split.json",
+    "tags": ["compare", "split", "ng-ok"],
+    "themeHints": ["warm", "tech", "business"],
+    "flexible": true
+  },
+  {
+    "id": "timeline-dual",
+    "title": "雙欄垂直時間線",
+    "html": "timeline-dual.html",
+    "schema": "patterns/timeline-dual.json",
+    "tags": ["timeline", "dual", "roadmap"],
+    "themeHints": ["warm", "business", "minimal"],
+    "flexible": true
+  },
+  {
+    "id": "vs-duel",
+    "title": "雙卡對決（VS 徽章版）",
+    "html": "vs-duel.html",
+    "schema": "patterns/vs-duel.json",
+    "tags": ["compare", "vs", "duel"],
+    "themeHints": ["warm", "business", "tech"],
+    "flexible": true
+  },
+  {
+    "id": "stat-grid",
+    "title": "數字儀表板卡片格",
+    "html": "stat-grid.html",
+    "schema": "patterns/stat-grid.json",
+    "tags": ["stats", "grid", "kpi"],
+    "themeHints": ["warm", "business", "minimal", "tech"],
+    "flexible": true
+  },
+  {
+    "id": "warm-card-pattern",
+    "title": "暖色編號卡片堆疊",
+    "html": "warm-card-pattern.html",
+    "schema": "patterns/warm-card-pattern.json",
+    "tags": ["cards", "stack", "steps"],
+    "themeHints": ["warm", "minimal", "business"],
+    "flexible": true
+  }
+]

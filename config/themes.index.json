@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "key": "business",
+    "displayName": {
+      "zh": "商務香檳金",
+      "en": "Business"
+    },
+    "preview": "references/previews/business-preview.png",
+    "shortDescription": {
+      "zh": "亮底香檳金商務風，沉穩、雜誌感、適合提案與高階簡報。",
+      "en": "Refined champagne-gold business theme for proposals, executive decks, and reports."
+    }
+  },
+  {
+    "id": 2,
+    "key": "light-tech",
+    "displayName": {
+      "zh": "亮色科技青",
+      "en": "Light Tech"
+    },
+    "preview": "references/previews/light-tech-preview.png",
+    "shortDescription": {
+      "zh": "冷白底科技青，資訊感清楚、適合產品說明、AI 工具與資料簡報。",
+      "en": "Bright, modern tech theme with glacier whites and restrained cyan accents."
+    }
+  },
+  {
+    "id": 3,
+    "key": "warm-minimal",
+    "displayName": {
+      "zh": "溫潤人文極簡",
+      "en": "Warm Minimal"
+    },
+    "preview": "references/previews/warm-minimal-preview.png",
+    "shortDescription": {
+      "zh": "人文襯線與暖白背景，安靜、克制、偏 editorial 的閱讀型主題。",
+      "en": "A restrained editorial theme with warm whites, soft shadows, and humanist serif accents."
+    }
+  },
+  {
+    "id": 4,
+    "key": "brand-warm",
+    "displayName": {
+      "zh": "品牌暖調",
+      "en": "Brand Warm"
+    },
+    "preview": "references/previews/brand-warm-preview.png",
+    "shortDescription": {
+      "zh": "Claude 調性延伸的奶油米與磚橘，帶品牌溫度、適合故事與教學型報告。",
+      "en": "Claude-inspired cream and brick palette with stronger brand warmth and softer hospitality."
+    }
+  }
+]

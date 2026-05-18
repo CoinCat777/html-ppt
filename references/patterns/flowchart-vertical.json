@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "flowchart-vertical",
+  "title": "垂直步驟循環圖",
+  "htmlDemo": "../flowchart-vertical.html",
+  "summary": "垂直流程搭配左側回饋循環與右側註解卡，適合方法論、流程修正與 PDCA 類頁面。",
+  "aliases": ["loop diagram", "PDCA", "垂直循環圖"],
+  "tags": ["flow", "vertical", "loop"],
+  "themeHints": ["warm", "business", "minimal"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "flow",
+    "orientation": "vertical",
+    "minItems": 3,
+    "maxItems": 6,
+    "supportsInsightBar": true
+  },
+  "slots": ["eyebrow", "title", "steps", "sideNotes", "insight"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-secondary",
+      "border": "border"
+    }
+  },
+  "defaults": {
+    "contentDensity": "medium",
+    "componentScale": "comfortable",
+    "stepWidth": 260,
+    "connectorStyle": "solid-arrow",
+    "sideCardWidth": 240
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "maxWordsPerStep": 20
+  }
+}

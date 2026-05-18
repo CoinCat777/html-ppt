@@ -1,0 +1,29 @@
+{
+  "exampleTheme": "business",
+  "mode": "light",
+  "source": "config/themes.json",
+  "tokens": {
+    "bg_main": "#F4F0EA",
+    "bg_card": "#FFFFFF",
+    "bg_subtle": "#F9F6F0",
+    "text_primary": "#2A3037",
+    "text_secondary": "#646A73",
+    "accent": "#B9935A",
+    "border": "#E5E0D8",
+    "divider": "#EDE6DC"
+  },
+  "cssVariables": {
+    "--bg-main": "#F4F0EA",
+    "--bg-card": "#FFFFFF",
+    "--text-primary": "#2A3037",
+    "--text-secondary": "#646A73",
+    "--accent": "#B9935A",
+    "--border": "#E5E0D8",
+    "--progress-track": "#E5E0D8",
+    "--progress-fill": "#B9935A"
+  },
+  "usage": {
+    "light": ":root, html[data-theme-mode='light']",
+    "dark": "html[data-theme-mode='dark']"
+  }
+}

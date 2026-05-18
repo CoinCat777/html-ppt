@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "warm-card-pattern",
+  "title": "暖色編號卡片堆疊",
+  "htmlDemo": "../warm-card-pattern.html",
+  "summary": "暖色系編號卡片垂直堆疊，適合教學步驟、方法拆解與教育內容。",
+  "aliases": ["stacked info cards", "numbered steps", "教學步驟卡"],
+  "tags": ["cards", "stack", "steps"],
+  "themeHints": ["warm", "minimal", "business"],
+  "flexible": true,
+  "legacy": false,
+  "layout": {
+    "type": "stacked-cards",
+    "orientation": "vertical",
+    "minItems": 3,
+    "maxItems": 5,
+    "supportsInsightBar": false,
+    "notes": "預設 3 張卡片；若超過 4 張，建議減少 padding 或改成雙欄。"
+  },
+  "slots": ["eyebrow", "title", "cards", "footer"],
+  "themeStrategy": {
+    "mode": "theme-tokens",
+    "tokens": {
+      "pageBg": "bg-primary",
+      "panelBg": "bg-card",
+      "surface": "bg-card",
+      "accent": "accent",
+      "text": "text-primary",
+      "muted": "text-secondary",
+      "border": "border"
+    },
+    "overrides": {
+      "warm": {
+        "accent": "#c56a3a"
+      }
+    }
+  },
+  "defaults": {
+    "contentDensity": "medium",
+    "componentScale": "comfortable",
+    "cardRadius": 18,
+    "cardGap": 18,
+    "cardPaddingX": 28,
+    "cardPaddingY": 24,
+    "badgeSizeRatio": 0.28,
+    "badgeMinPx": 88,
+    "badgeMaxPx": 118,
+    "connectorStyle": "arrow",
+    "iconStyle": "line-handdrawn",
+    "decorations": {
+      "cornerDots": true,
+      "topArc": true
+    }
+  },
+  "constraints": {
+    "minContrastBody": 4.5,
+    "minContrastLarge": 3.0,
+    "badgeSizeRatioRange": [0.18, 0.4],
+    "cardPaddingXRange": [20, 40],
+    "cardPaddingYRange": [16, 32],
+    "maxWordsPerCard": 22
+  }
+}
